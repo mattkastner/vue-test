@@ -1,0 +1,38 @@
+.page {
+  width: 100vw;
+  min-height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  .post {
+    margin-top: 30px;
+    width: 50%;
+  }
+  .comment-section {
+    margin-top: 90px;
+      .comment {
+        margin-bottom: 10px;
+        width: 99%;
+      }
+  }
+
+
+  .related-articles {
+    margin-top: 60px;
+    width: 40%;
+    margin-bottom: 20px;
+
+    .underline:hover {
+        color: blue;
+    }
+
+    .related-title {
+      margin-bottom: 30px;
+    }
+
+    .related-articles-post {
+      margin-bottom: 15px;
+    }
+  }
+}

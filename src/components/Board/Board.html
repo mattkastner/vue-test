@@ -1,0 +1,14 @@
+<b-card-group deck class="board">
+  <div class="author">
+    <b-card>
+      <b-media>
+        <template v-slot:aside>
+          <img id="profile-thumbnail" :src="picture" alt="Loading Profile" />
+        </template>
+        <h5 class="mt-0">{{author.name}}</h5>
+        <p>({{author.username}})</p>
+      </b-media>
+    </b-card>
+  </div>
+  <Post v-for="post in this.posts" v-bind:key="post.id" v-bind:post="post" />
+</b-card-group>

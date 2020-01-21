@@ -1,0 +1,54 @@
+<div class="page">
+    {{stuff}}
+  <div class="post">
+      <b-card-title>{{postInfo.title}}</b-card-title>
+      <b-media>
+          <template v-slot:aside>
+            <img :src="picture" alt="Media Aside">
+          </template>
+          <h2>{{author.name}}</h2>
+          <p>({{author.username}})</p>
+        </b-media>
+      <b-card-text>
+        {{postInfo.body}}
+      </b-card-text>
+
+    </b-card>
+
+    <div class="comment-section">
+        <b-card-group deck>
+          <b-card  header-tag="header">
+            <template v-slot:header>
+              <h6 class="mb-0">Comment Section</h6>
+            </template>
+            <div class="comment-container">
+              <b-card class="comment" v-for="comment, i in this.comments" :key="i" >
+                  <b-card-sub-title class="mb-2">{{comment.title}}</b-card-sub-title>
+                  <b-card-text>
+                    {{comment.description}}
+                  </b-card-text>
+              </b-card>
+            </div>
+          </b-card>
+        </b-card-group>
+      </div>
+  </div>
+  <div class="related-articles">
+      <b-card>
+        <b-media no-body>
+          <b-media-body class="ml-3">
+            <h5 class="mt-0 related-title">Related Articles</h5>
+            <b-media class="related-articles-post" v-for="post, i in this.relatedPosts" :key="i" >
+              <template v-slot:aside >
+                <b-img blank blank-color="#ccc" width="64" alt="placeholder"></b-img>
+              </template>
+              <h5 class="mt-0">{{post.title}}</h5>
+              <p>{{post.body}}</p>
+              <hr/>
+            </b-media>
+            
+          </b-media-body>
+        </b-media>
+      </b-card>
+    </div>
+</div>
